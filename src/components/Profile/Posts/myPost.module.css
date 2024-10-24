@@ -1,0 +1,37 @@
+.myPost {
+    display: block;
+    padding: 10px;
+}
+
+.title {
+    color: rgb(50, 130, 117);
+}
+
+.text {
+    width: 95%;
+    height: 90px;
+    margin: 10px 0;
+    padding: 10px;
+    resize: none;
+    background-color: #ABCD9E;
+    color: rgb(50, 130, 117);
+    border-radius: 5px;
+    outline: none;
+}
+
+.text::-webkit-input-placeholder {
+    color: rgb(50, 130, 117);
+}
+
+.sendBtn {
+    width: 100px;
+    height: 30px;
+    color: #ABCD9E;
+    background-color: rgb(50, 130, 117);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 85%;
+    top: -5px;
+}

@@ -1,0 +1,25 @@
+.nav {
+    grid-area: nav;
+}
+
+.item {
+    padding: 8px;
+    background-color: rgb(50, 130, 117);
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.item:last-child {
+    height: 65vh;
+}
+
+.item a {
+    color: #ABCD9E;
+    cursor: pointer;
+    text-decoration: none;    
+}
+
+.item a.activeLink {
+    text-decoration: underline;
+}

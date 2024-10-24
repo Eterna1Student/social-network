@@ -1,0 +1,15 @@
+
+
+.header {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    grid-area: header;
+    background-color: rgb(50, 130, 117);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.logo {
+    width: 50px;
+}

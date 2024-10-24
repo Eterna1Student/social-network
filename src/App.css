@@ -1,0 +1,24 @@
+.app-wrapper {
+    box-sizing: border-box;
+    display: grid;
+    width: 1200px;
+    margin: 0 auto;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
+    grid-template-areas: 'header header'
+                         'nav cont';
+}
+
+a {
+    text-decoration: none;
+}
+
+.app-wrapper-content {
+    grid-area: cont;
+}
+
+
+
+
+

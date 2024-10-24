@@ -1,0 +1,29 @@
+.content {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
+
+.friendsList .active {
+    color: blue;
+}
+
+.item {
+    padding: 7px 0 7px 30px;
+}
+
+.item a {
+    color: #328275;
+}
+
+.item:first-child {
+    text-decoration: underline;
+    color: #328275
+}
+
+/* .dialogs {
+
+} */
+
+.message {
+    padding: 10px;
+}
