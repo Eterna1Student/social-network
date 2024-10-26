@@ -8,12 +8,8 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import {updateNewPostText} from "./redux/state";
-
-
 
 const App = (props) => {
-
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -25,8 +21,7 @@ const App = (props) => {
                                                      dispatch={props.dispatch}
                                                      />}
             />
-            <Route path='/messages' 
-              element={<Messages messagesData={props.appState}/>} />
+            <Route path='/messages' element={<Messages store={props.store}/>} />
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
             <Route path='/settings' element={<Settings />} />

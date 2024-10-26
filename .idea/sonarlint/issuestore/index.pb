@@ -28,3 +28,13 @@ $src/components/Settings/Settings.jsx,a\1\a12159a98604d957a2d6768526fda5683e4de
 .src/components/Profile/Posts/myPost.module.css,d\d\ddace4ae2aede995ef1b15b36f939afa12688191
 T
 $src/components/Messages/Messages.jsx,e\3\e3dfc0f27cc07a7b6bb40ed483c603f8cc92da30
+Y
+)src/components/Messages/Friend/Friend.jsx,4\8\4873647962d8c56dc7eeec51ea4cf63ec211fb2a
+`
+0src/components/Messages/Messages/TextMessage.jsx,8\c\8cb92b63c9522e61871cc38eb6fbbb02249b1286
+g
+7src/components/Messages/Messages/TextMessage.module.css,9\1\910dbd2c50a296b70e72fd897288f5401d03cfb8
+c
+3src/components/Messages/TextMessage/TextMessage.jsx,f\6\f696f49970ddcd1fee1e357caa79fffc9100af17
+j
+:src/components/Messages/TextMessage/TextMessage.module.css,d\b\db2c4f761565364c24d47062fadc117f541f8d3a
