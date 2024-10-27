@@ -1,10 +1,10 @@
 import React from 'react';
 import myPost from './myPost.module.css'
 import Post from './Post/Post'
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
 
 const MyPost = (props) => {
-    console.log(props)
+
     let postsElement = props.textsPots.map((text, index) => <Post message={text.message} id={text.id} key={index}/>);
     let newPostElement = React.createRef();
     let addPost = () => {

@@ -30,11 +30,11 @@ T
 $src/components/Messages/Messages.jsx,e\3\e3dfc0f27cc07a7b6bb40ed483c603f8cc92da30
 Y
 )src/components/Messages/Friend/Friend.jsx,4\8\4873647962d8c56dc7eeec51ea4cf63ec211fb2a
-`
-0src/components/Messages/Messages/TextMessage.jsx,8\c\8cb92b63c9522e61871cc38eb6fbbb02249b1286
-g
-7src/components/Messages/Messages/TextMessage.module.css,9\1\910dbd2c50a296b70e72fd897288f5401d03cfb8
 c
 3src/components/Messages/TextMessage/TextMessage.jsx,f\6\f696f49970ddcd1fee1e357caa79fffc9100af17
 j
 :src/components/Messages/TextMessage/TextMessage.module.css,d\b\db2c4f761565364c24d47062fadc117f541f8d3a
+L
+src/redux/profile-reducer.js,c\e\ce4badeb8c2b2ce587479ee789ecc1d46bc12af6
+L
+src/redux/dialogs-reducer.js,c\e\cebebab9aa6ef20b437c8400344547b47a967a2f

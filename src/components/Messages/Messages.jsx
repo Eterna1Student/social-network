@@ -1,7 +1,7 @@
 import Friend from "./Friend/Friend";
 import TextMessage from "./TextMessage/TextMessage";
 import style from './Messages.module.css';
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/state";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reducer";
 
 
 const Messages = (props) => {
