@@ -38,3 +38,11 @@ L
 src/redux/profile-reducer.js,c\e\ce4badeb8c2b2ce587479ee789ecc1d46bc12af6
 L
 src/redux/dialogs-reducer.js,c\e\cebebab9aa6ef20b437c8400344547b47a967a2f
+[
++src/components/Settings/Settings.module.css,9\a\9a819ad6f60bea89efa36c00ea19f259a45aa0ff
+P
+ src/redux/slices/profileSlice.js,9\8\985714a359cae3c86573516375933be0e41a517a
+Q
+!src/redux/slices/store-toolkit.js,f\8\f85a1a4caffd98968e3a7cf9080f091a459ef3cb
+P
+ src/redux/slices/dialogsSlice.js,9\4\947f7f59add759c14d16421bd2f10fa99c62b1b6

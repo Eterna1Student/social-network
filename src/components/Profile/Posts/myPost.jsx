@@ -1,33 +1,33 @@
 import React from 'react';
 import myPost from './myPost.module.css'
 import Post from './Post/Post'
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
+import {useDispatch, useSelector} from "react-redux";
+import {addPostReducer, updateTextPostReducer} from "../../../redux/slices/profileSlice";
 
-const MyPost = (props) => {
 
-    let postsElement = props.textsPots.map((text, index) => <Post message={text.message} id={text.id} key={index}/>);
-    let newPostElement = React.createRef();
-    let addPost = () => {
-        props.dispatch(addPostActionCreator())
-    }
+const MyPost = () => {
+    // Вытаскиваем данные из хранилища
+    // Здесь state — это все состояние
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.dispatch(updateNewPostTextActionCreator(text))
-    }
+    const posts = useSelector((state) => state.profileSlice.textPostData);
+    const newPostText = useSelector((state) => state.profileSlice.newPostText);
+    // console.log(newPostText)
+    // Возвращает метод store.dispatch() текущего хранилища
+    const dispatch = useDispatch();
+
+    let postsElement = posts.map((text, index) => <Post message={text.message} id={text.id} key={index}/>);
 
     return (
         <div className={myPost.myPost}>
             <span className={myPost.title}>
                 My Post
             </span>
-            <textarea onChange={onPostChange}
-                      value={props.newPostText}
-                      ref={newPostElement}
+            <textarea onChange={(e) => dispatch(updateTextPostReducer(e.target.value))}
+                      value={newPostText}
                       name="myPost" placeholder='your news...'
                       className={myPost.text}>
             </textarea>
-            <button className={myPost.sendBtn} onClick={addPost}>
+            <button className={myPost.sendBtn} onClick={() => dispatch(addPostReducer())}>
                 Send
             </button>
             {postsElement}

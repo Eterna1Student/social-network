@@ -1,24 +1,20 @@
+import style from './Messages.module.css';
+import {useDispatch, useSelector} from "react-redux";
 import Friend from "./Friend/Friend";
 import TextMessage from "./TextMessage/TextMessage";
-import style from './Messages.module.css';
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reducer";
+import {sendMessageReducer, updateNewMessageBodyReducer} from "../../redux/slices/dialogsSlice";
+
 
 
 const Messages = (props) => {
 
-    let state = props.store.getState().dialogsPage
+    const {friends, messages, newMessageBody} = useSelector((state) => state.dialogsSlice)
 
-    let dialogsElement = state.friends.map((d, index) => <Friend name={d.name} id={d.id} key={index}/>)
-    let messagesElement = state.messages.map((message, index) => <TextMessage text={message.text} id={message.id} key={index}/>)
-    let newMessageBody = state.newMessageBody
-    // console.log(newMessageBody)
-    let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreator())
-    }
-    let onNewMessageChange = (e) => {
-        let body = e.target.value
-        props.store.dispatch(updateNewMessageBodyCreator(body))
-    }
+    let dialogsElement = friends.map((d, index) => <Friend name={d.name} id={d.id} key={index}/>)
+    let messagesElement = messages.map((message, index) => <TextMessage text={message.message} id={message.id} key={index}/>)
+
+    const dispatch = useDispatch();
+
 
     return <div>
         <h2 className='title'>
@@ -32,8 +28,11 @@ const Messages = (props) => {
             <div className={style.dialogs}>
                 { messagesElement }
                 <div>
-                    <textarea value={newMessageBody} onChange={onNewMessageChange} placeholder='Введите сообщение'></textarea>
-                    <button onClick={onSendMessageClick}>отправить</button>
+                    <textarea value={newMessageBody}
+                              onChange={(e) => dispatch(updateNewMessageBodyReducer(e.target.value))}
+                              placeholder='Введите сообщение'>
+                    </textarea>
+                    <button onClick={() => dispatch(sendMessageReducer())}>отправить</button>
                 </div>
             </div>
         </div>

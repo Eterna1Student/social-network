@@ -1,4 +1,3 @@
-
 import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
@@ -17,9 +16,7 @@ const App = (props) => {
         <Navbar />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/profile' element={<Profile profilePage={props.state}
-                                                     dispatch={props.dispatch}
-                                                     />}
+            <Route path='/profile' element={<Profile />}
             />
             <Route path='/messages' element={<Messages store={props.store}/>} />
             <Route path='/news' element={<News />} />

@@ -20,9 +20,9 @@ const store = {
                 { id: 6, name: 'Viktor' },
             ],
             messages: [
-                { id: 1, text: 'Lorem ipsum dolor sit.' },
+                { id: 1, text: 'Lorem ipsum dolor sit.'},
                 { id: 2, text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, reiciendis?'},
-                { id: 3, text: 'Lorem ipsum dolor sit amet consectetur adipisicing.' },
+                { id: 3, text: 'Lorem ipsum dolor sit amet consectetur adipisicing.'},
             ],
             newMessageBody: ''
         }
