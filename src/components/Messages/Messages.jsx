@@ -8,13 +8,8 @@ import {sendMessageReducer, updateNewMessageBodyReducer} from "../../redux/slice
 
 const Messages = (props) => {
 
-    const {friends, messages, newMessageBody} = useSelector((state) => state.dialogsSlice)
-
-    let dialogsElement = friends.map((d, index) => <Friend name={d.name} id={d.id} key={index}/>)
-    let messagesElement = messages.map((message, index) => <TextMessage text={message.message} id={message.id} key={index}/>)
-
-    const dispatch = useDispatch();
-
+    let dialogsElement = props.friends.map((d, index) => <Friend name={d.name} id={d.id} key={index}/>)
+    let messagesElement = props.messages.map((message, index) => <TextMessage text={message.message} id={message.id} key={index}/>)
 
     return <div>
         <h2 className='title'>
@@ -28,11 +23,11 @@ const Messages = (props) => {
             <div className={style.dialogs}>
                 { messagesElement }
                 <div>
-                    <textarea value={newMessageBody}
-                              onChange={(e) => dispatch(updateNewMessageBodyReducer(e.target.value))}
+                    <textarea value={props.newMessageBody}
+                              onChange={props.updateNewMessage}
                               placeholder='Введите сообщение'>
                     </textarea>
-                    <button onClick={() => dispatch(sendMessageReducer())}>отправить</button>
+                    <button onClick={props.sendMessage}>отправить</button>
                 </div>
             </div>
         </div>

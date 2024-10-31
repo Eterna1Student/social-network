@@ -46,3 +46,9 @@ Q
 !src/redux/slices/store-toolkit.js,f\8\f85a1a4caffd98968e3a7cf9080f091a459ef3cb
 P
  src/redux/slices/dialogsSlice.js,9\4\947f7f59add759c14d16421bd2f10fa99c62b1b6
+`
+0src/components/Profile/Posts/myPostContainer.jsx,4\6\465320793af03d14d71ce87f048056467b3fbba7
+i
+9src/components/Messages/TextMessage/MessagesContainer.jsx,1\9\19cda5ab15eb15c1f16084e0a15f156a6893feee
+W
+'src/components/Profile/Posts/MyPost.jsx,c\9\c9994e6eb927d3f7f1d18daf1ea1226a373d98fa
