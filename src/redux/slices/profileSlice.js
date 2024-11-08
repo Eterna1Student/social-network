@@ -17,7 +17,6 @@ const profileSlice = createSlice({
     initialState,
     // Редьюсеры в слайсах меняют состояние и ничего не возвращают
     reducers: {
-
         updateTextPostReducer: (state, action) => {
             state.newPostText = action.payload
         },
