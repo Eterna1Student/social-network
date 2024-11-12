@@ -4,10 +4,7 @@ import avaDefault from '../../assets/icon/avatar-default-symbolic.svg'
 import {Component} from "react";
 
 class Users extends Component {
-
-    constructor(props) {
-        super(props)
-
+    componentDidMount() {
         axios.get('https://social-network.samuraijs.com/api/1.0/users')
             .then(response => {
                 this.props.setUsers(response.data.items)
@@ -16,9 +13,8 @@ class Users extends Component {
 
     render() {
         return <ul className={u.usersList}>
-                 <button onClick={this.getUsers}>Добавить пользователей</button>
                  {
-                    this.props.users.map(user => <li className={u.usersItem} key={user.id}>
+                    this.props.users.map((user, index) => <li className={u.usersItem} key={index}>
                         <div className={u.leftPart}>
                             <img className={u.usersAvatar}
                                  src={user.photos.small != null ? user.photos.small : avaDefault}

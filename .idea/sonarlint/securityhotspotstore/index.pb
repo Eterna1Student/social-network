@@ -66,8 +66,6 @@ U
 %src/components/Users/Users.module.css,0\f\0ff6b304203790248e25fbda49de243d629700e7
 W
 'src/components/Navbar/Navbar.module.css,a\7\a705bca6c373b23bd5cf07e6aca8457221582a5c
-R
-"public/avatar-default-symbolic.svg,8\2\826e6c54ba3c916f80e0b87a06d44c72f4b29f40
 [
 +src/assets/icon/avatar-default-symbolic.svg,2\a\2af63094091648c3295d20e3fc715ce4ff7157e2
 S
