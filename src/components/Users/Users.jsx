@@ -4,14 +4,17 @@ import avaDefault from '../../assets/icon/avatar-default-symbolic.svg'
 
 const Users = (props) => {
 
-    if (props.users.length === 0){
-        axios.get('https://social-network.samuraijs.com/api/1.0/users')
-            .then(response => {
-            props.setUsers(response.data.items)
-        })
+    let getUsers = () => {
+        if (props.users.length === 0){
+            axios.get('https://social-network.samuraijs.com/api/1.0/users')
+                .then(response => {
+                    props.setUsers(response.data.items)
+                })
+        }
     }
 
     return <ul className={u.usersList}>
+        <button onClick={getUsers}>Добавить пользователей</button>
         {
             props.users.map(user => <li className={u.usersItem} key={user.id}>
                 <div className={u.leftPart}>

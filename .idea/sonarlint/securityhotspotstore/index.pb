@@ -70,3 +70,5 @@ R
 "public/avatar-default-symbolic.svg,8\2\826e6c54ba3c916f80e0b87a06d44c72f4b29f40
 [
 +src/assets/icon/avatar-default-symbolic.svg,2\a\2af63094091648c3295d20e3fc715ce4ff7157e2
+S
+#src/components/Users/UsersClass.jsx,7\4\741486e6b940d84aa294880cf1f67a1552221432
