@@ -1,8 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
+import state from "../state";
 
 // Начальное значение
 const initialState = {
-    users: []
+    users: [],
+    pageSize: 10,
+    totalUsersCount: 0,
+    currentPage: 1
 }
 
 
@@ -26,14 +30,25 @@ const usersSlice = createSlice({
             })
         },
         setUsersReducer: (state, action) => {
-            state.users = [...state.users, ...action.payload]
+            state.users = action.payload
+        },
+        setCurrentPageReducer: (state, action) => {
+            state.currentPage = action.payload
+        },
+        setTotalCountReducer: (state, action) => {
+            state.totalUsersCount = action.payload
         }
     },
 });
 
 // Слайс генерирует действия, которые экспортируются отдельно
 // Действия генерируются автоматически из имен ключей редьюсеров
-export const { followReducer, unfollowReducer, setUsersReducer} = usersSlice.actions;
+export const {
+        followReducer,
+        unfollowReducer,
+        setUsersReducer,
+        setCurrentPageReducer,
+        setTotalCountReducer} = usersSlice.actions;
 
 // По умолчанию экспортируется редьюсер, сгенерированный слайсом
 export default usersSlice.reducer;

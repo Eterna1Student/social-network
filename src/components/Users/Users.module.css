@@ -61,3 +61,20 @@
     font-size: 20px;
 }
 
+.pagination {
+    display: flex;
+    margin: 0 auto;
+    list-style-type: none;
+    width: 100px;
+    justify-content: space-between;
+    color: #328275;
+}
+
+.pagination>li {
+    cursor: pointer;
+}
+
+.pagination__item_active {
+    font-weight: bold;
+}
+
