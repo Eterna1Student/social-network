@@ -6,7 +6,8 @@ const initialState = {
     users: [],
     pageSize: 10,
     totalUsersCount: 0,
-    currentPage: 1
+    currentPage: 1,
+    isFetching: true,
 }
 
 
@@ -37,6 +38,9 @@ const usersSlice = createSlice({
         },
         setTotalCountReducer: (state, action) => {
             state.totalUsersCount = action.payload
+        },
+        setFetchingReducer: (state, action) => {
+            state.isFetching = action.payload
         }
     },
 });
@@ -48,7 +52,9 @@ export const {
         unfollowReducer,
         setUsersReducer,
         setCurrentPageReducer,
-        setTotalCountReducer} = usersSlice.actions;
+        setTotalCountReducer,
+        setFetchingReducer
+    } = usersSlice.actions;
 
 // По умолчанию экспортируется редьюсер, сгенерированный слайсом
 export default usersSlice.reducer;
