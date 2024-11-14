@@ -5,9 +5,38 @@ import {
     setUsersReducer,
     setCurrentPageReducer, setTotalCountReducer
 } from "../../redux/slices/usersSlice";
-import UsersClass from "./UsersClass";
+import React, {Component} from "react";
+import axios from "axios";
+import UsersPresent from "./UsersPresent";
 
 
+class UsersClassAPI extends Component {
+    componentDidMount = () => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items)
+                this.props.setTotalCount(response.data.totalCount)
+            })
+    }
+    onPageChanged = (page) => {
+        this.props.setCurrentPage(page)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items)
+            })
+    }
+
+    render() {
+        // console.log(this.props.currentPage)
+        return <UsersPresent users={this.props.users}
+                             totalUsersCount={this.props.totalUsersCount}
+                             pageSize={this.props.pageSize}
+                             currentPage={this.props.currentPage}
+                             onPageChanged={this.onPageChanged}
+                             follow={this.props.follow}
+                             unFollow={this.props.unfollow}/>
+    }
+}
 
 const UsersContainer = () => {
     const users = useSelector((state) => state.usersSlice.users)
@@ -23,11 +52,11 @@ const UsersContainer = () => {
     let setCurrentPage = (pageNum) => dispatch(setCurrentPageReducer(pageNum))
     let setTotalCount = (totalCount) => dispatch(setTotalCountReducer(totalCount))
 
-    return <UsersClass users={users}
+    return <UsersClassAPI users={users}
                        pageSize={pageSize}
                        totalUsersCount={totalUsersCount}
                        follow={follow}
-                       unFollow={unfollow}
+                       unfollow={unfollow}
                        setUsers={setUsers}
                        setCurrentPage={setCurrentPage}
                        currentPage={currentPage}

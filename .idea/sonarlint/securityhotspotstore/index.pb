@@ -70,3 +70,7 @@ W
 +src/assets/icon/avatar-default-symbolic.svg,2\a\2af63094091648c3295d20e3fc715ce4ff7157e2
 S
 #src/components/Users/UsersClass.jsx,7\4\741486e6b940d84aa294880cf1f67a1552221432
+U
+%src/components/Users/UsersPresent.jsx,f\4\f4bd1930faec387fb3965e69e9c9ddf7f1aa6427
+V
+&src/components/Users/UsersClassAPI.jsx,f\0\f0514e5dcdd3607a1b13cbce48cf0b0a2c318946
