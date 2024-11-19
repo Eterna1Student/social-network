@@ -10,6 +10,7 @@ const initialState = {
         { id: 3, message: "Hey, why nobody love my?" },
     ],
     newPostText: '',
+    profile: null
 }
 
 const profileSlice = createSlice({
@@ -26,13 +27,20 @@ const profileSlice = createSlice({
                 message: state.newPostText
             })
             state.newPostText = ''
+        },
+        setUserProfileReducer: (state, action) => {
+            state.profile = action.payload
         }
     },
 });
 
 // Слайс генерирует действия, которые экспортируются отдельно
 // Действия генерируются автоматически из имен ключей редьюсеров
-export const { updateTextPostReducer, addPostReducer} = profileSlice.actions;
+export const {
+    updateTextPostReducer,
+    addPostReducer,
+    setUserProfileReducer
+} = profileSlice.actions;
 
 // По умолчанию экспортируется редьюсер, сгенерированный слайсом
 export default profileSlice.reducer;

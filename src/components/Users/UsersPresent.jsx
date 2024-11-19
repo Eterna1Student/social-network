@@ -1,6 +1,7 @@
 import u from './Users.module.css'
 import avaDefault from '../../assets/icon/avatar-default-symbolic.svg'
 import React from "react";
+import {Link} from "react-router-dom";
 
 
 const UsersPresent = (props) => {
@@ -33,9 +34,11 @@ const UsersPresent = (props) => {
                 {
                     props.users.map((user, index) => <li className={u.usersItem} key={index}>
                         <div className={u.leftPart}>
-                            <img className={u.usersAvatar}
-                                 src={user.photos.small != null ? user.photos.small : avaDefault}
-                                 alt="avatar"/>
+                            <Link to={'/profile/' + user.id}>
+                                <img className={u.usersAvatar}
+                                     src={user.photos.small != null ? user.photos.small : avaDefault}
+                                     alt="avatar"/>
+                            </Link>
                             <button className={u.usersBtn}
                                     onClick={user.followed ? () => props.unFollow(user.id) : () => props.follow(user.id)}>
                                 {user.followed === true ? 'Удалить' : 'Добавить'}
