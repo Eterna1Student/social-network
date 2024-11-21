@@ -34,7 +34,7 @@ const UsersPresent = (props) => {
                 {
                     props.users.map((user, index) => <li className={u.usersItem} key={index}>
                         <div className={u.leftPart}>
-                            <Link to={'/profile/' + user.id}>
+                            <Link to={'/profile/ ' + user.id}>
                                 <img className={u.usersAvatar}
                                      src={user.photos.small != null ? user.photos.small : avaDefault}
                                      alt="avatar"/>
