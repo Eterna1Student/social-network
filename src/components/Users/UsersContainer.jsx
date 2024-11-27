@@ -10,8 +10,6 @@ import axios from "axios";
 import UsersPresent from "./UsersPresent";
 import Loader from "../../common/Loader/Loader";
 
-
-
 class UsersClassAPI extends Component {
     componentDidMount = () => {
         this.props.toggleFetching(true)

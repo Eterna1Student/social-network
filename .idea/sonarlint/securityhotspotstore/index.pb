@@ -80,3 +80,13 @@ S
 +src/components/Profile/ProfileContainer.jsx,9\2\924a493daba602ac555dab6ecf150a3eac3b212b
 \
 ,src/components/Profile/userDate/userDate.jsx,5\9\59d8791d7ce35c057d8ada96abb7f0836176c3dd
+M
+src/redux/slices/authSlice.js,b\f\bf5563282951457d7246077ae4dc0503158dd57f
+P
+ src/components/Header/Header.jsx,c\1\c190362ff4dd89e9c16838b502ca303aeecc3db4
+W
+'src/components/Header/Header.module.css,a\5\a5b977cfe8f68493fa1388e27be6a7b1bdb2c7c6
+Y
+)src/components/Header/HeaderContainer.jsx,5\6\560473d288b962b81b29ab15e88aafc7d12c2de2
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a

@@ -40,7 +40,12 @@ const UsersPresent = (props) => {
                                      alt="avatar"/>
                             </Link>
                             <button className={u.usersBtn}
-                                    onClick={user.followed ? () => props.unFollow(user.id) : () => props.follow(user.id)}>
+                                    onClick={user.followed
+
+                                        ? () => props.unFollow(user.id)
+
+                                        : () => props.follow(user.id)}>
+
                                 {user.followed === true ? 'Удалить' : 'Добавить'}
                             </button>
                         </div>

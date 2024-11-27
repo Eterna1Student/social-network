@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import state from "../state";
 
 // Начальное значение
 const initialState = {

@@ -8,7 +8,6 @@ import {useParams} from "react-router-dom";
 
 class ProfileClassAPI extends Component {
     componentDidMount() {
-
         axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${this.props.userId}`)
             .then(response => {
                 this.props.dispatch(setUserProfileReducer(response.data))
