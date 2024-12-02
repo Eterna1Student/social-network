@@ -14,7 +14,6 @@ class UsersClassAPI extends Component {
     componentDidMount = () => {
         this.props.toggleFetching(true)
         usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
-            debugger
                 this.props.toggleFetching(false)
                 this.props.setUsers(data.items)
                 this.props.setTotalCount(data.totalCount)

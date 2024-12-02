@@ -1,16 +1,15 @@
 import Profile from "./Profile";
 import React, {Component} from "react";
-import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import {setUserProfileReducer} from "../../redux/slices/profileSlice";
 import {useParams} from "react-router-dom";
+import {usersAPI} from "../../api/api";
 
 
 class ProfileClassAPI extends Component {
     componentDidMount() {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${this.props.userId}`)
-            .then(response => {
-                this.props.dispatch(setUserProfileReducer(response.data))
+        usersAPI.getUserId(this.props.userId).then(data => {
+                this.props.dispatch(setUserProfileReducer(data))
             })
     }
 

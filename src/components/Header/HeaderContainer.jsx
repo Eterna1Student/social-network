@@ -1,16 +1,14 @@
-
 import {Component} from "react";
 import Header from "./Header";
-import axios from "axios";
 import {setAuthUserDataReducer} from "../../redux/slices/authSlice";
 import {useDispatch, useSelector} from "react-redux";
+import {usersAPI} from "../../api/api";
 
 class HeaderContainerAPI extends Component {
     componentDidMount() {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {withCredentials: true})
-            .then(response => {
-                if(response.data.resultCode === 0) {
-                    this.props.dispatch(setAuthUserDataReducer(response.data.data))
+        usersAPI.getMe().then(data => {
+                if(data.resultCode === 0) {
+                    this.props.dispatch(setAuthUserDataReducer(data.data))
                 }
             })
     }
