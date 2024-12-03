@@ -3,7 +3,7 @@ import {
     followReducer,
     unfollowReducer,
     setUsersReducer,
-    setCurrentPageReducer, setTotalCountReducer, setFetchingReducer
+    setCurrentPageReducer, setTotalCountReducer, setFetchingReducer, setFollowingReducer
 } from "../../redux/slices/usersSlice";
 import React, {Component} from "react";
 import UsersPresent from "./UsersPresent";
@@ -38,6 +38,8 @@ class UsersClassAPI extends Component {
                           onPageChanged={this.onPageChanged}
                           follow={this.props.follow}
                           unFollow={this.props.unfollow}
+                          toggleFollowingProgress={this.props.toggleFollowingProgress}
+                          followingProgress={this.props.followingProgress}
             />
 
         </>
@@ -50,6 +52,7 @@ const UsersContainer = () => {
     const totalUsersCount = useSelector((state) => state.usersSlice.totalUsersCount)
     const currentPage = useSelector((state) => state.usersSlice.currentPage)
     const isFetching = useSelector((state) => state.usersSlice.isFetching)
+    const followingProgress = useSelector((state) => state.usersSlice.followingProgress)
 
     const dispatch = useDispatch();
 
@@ -59,10 +62,13 @@ const UsersContainer = () => {
     let setCurrentPage = (pageNum) => dispatch(setCurrentPageReducer(pageNum))
     let setTotalCount = (totalCount) => dispatch(setTotalCountReducer(totalCount))
     let toggleFetching = (fetch) => dispatch(setFetchingReducer(fetch))
+    let toggleFollowingProgress = (tab, userID) => dispatch(setFollowingReducer({tab, userID}))
 
     return <UsersClassAPI users={users}
                           pageSize={pageSize}
                           totalUsersCount={totalUsersCount}
+                          isFetching={isFetching}
+                          followingProgress={followingProgress}
                           follow={follow}
                           unfollow={unfollow}
                           setUsers={setUsers}
@@ -70,7 +76,8 @@ const UsersContainer = () => {
                           toggleFetching={toggleFetching}
                           currentPage={currentPage}
                           setTotalCount={setTotalCount}
-                          isFetching={isFetching}/>
+                          toggleFollowingProgress={toggleFollowingProgress}
+                          />
 }
 
 export default UsersContainer;

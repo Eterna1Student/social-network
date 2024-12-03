@@ -6,7 +6,6 @@ import axios from "axios";
 
 
 const UsersPresent = (props) => {
-
     let pagesCount = Math.ceil(props.totalUsersCount/props.pageSize)
     const pages = []
 
@@ -41,9 +40,10 @@ const UsersPresent = (props) => {
                                      alt="avatar"/>
                             </Link>
                             <button className={u.usersBtn}
+                                    disabled={props.followingProgress.some( id => id === user.id )}
                                     onClick={user.followed
-
                                         ? () => {
+                                            props.toggleFollowingProgress(true, user.id)
                                             axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`,
                                                 {
                                                     withCredentials: true,
@@ -55,9 +55,11 @@ const UsersPresent = (props) => {
                                                     if(response.data.resultCode === 0) {
                                                         props.unFollow(user.id)
                                                     }
+                                                    props.toggleFollowingProgress(false, user.id)
                                                 })
                                         }
                                         : () => {
+                                            props.toggleFollowingProgress(true, user.id)
                                             axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`,
                                                 {},
                                                 {
@@ -70,6 +72,7 @@ const UsersPresent = (props) => {
                                                     if(response.data.resultCode === 0) {
                                                         props.follow(user.id)
                                                     }
+                                                    props.toggleFollowingProgress(false, user.id)
                                                 })
                                     }}>
 

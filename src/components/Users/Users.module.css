@@ -28,6 +28,10 @@
     cursor: pointer;
 }
 
+.usersBtn:disabled {
+    background-color: rgba(50, 130, 117, 0.16);
+}
+
 .leftPart {
     display: flex;
     flex-direction: column;

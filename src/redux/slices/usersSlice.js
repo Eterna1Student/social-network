@@ -7,6 +7,7 @@ const initialState = {
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: true,
+    followingProgress: []
 }
 
 
@@ -40,7 +41,13 @@ const usersSlice = createSlice({
         },
         setFetchingReducer: (state, action) => {
             state.isFetching = action.payload
-        }
+        },
+        setFollowingReducer: (state, action) => {
+            console.log(action.payload)
+        state.followingProgress = action.payload.tab
+            ? [...state.followingProgress, action.payload.userID]
+            : state.followingProgress.filter(id => id != action.payload.userID)
+},
     },
 });
 
@@ -52,7 +59,8 @@ export const {
         setUsersReducer,
         setCurrentPageReducer,
         setTotalCountReducer,
-        setFetchingReducer
+        setFetchingReducer,
+        setFollowingReducer
     } = usersSlice.actions;
 
 // По умолчанию экспортируется редьюсер, сгенерированный слайсом
